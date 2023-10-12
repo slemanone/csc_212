@@ -13,8 +13,7 @@ public boolean full() {
 }
 
 public T retrive() {
-	 return current.data;	 
-}
+	 return current.data;	 }
 
 
 public void findfirst() {
@@ -59,19 +58,21 @@ public void insertSortred(T val) {
 }
 	}
 	
-	
-
-	
-	
-	
-	
-	
-	
-	
 }
-	
-	
-	
+
+public boolean Search(T val) {
+	current=head;
+	Node <T> tmp;
+	if(empty())
+		return false;
+	while (current!=null && current.getData().compareTo(val)!=0)
+		current=current.getNext();
+	if(current.getData().compareTo(val)==0) {
+		tmp = current;
+		return true;
+	}
+return false;	
+}	
 	
 	
 	
