@@ -2,10 +2,11 @@ public class LinkedList<T extends Comparable<T>> {
 	
 private Node<T> head;
 private Node<T> current;
-
+public int length;
 
 public LinkedList() {
 	head = current = null;
+	
 }
 
 public boolean full() {
@@ -13,7 +14,8 @@ public boolean full() {
 }
 
 public T retrive() {
-	 return current.data;	 
+	 return current.data;
+	 
 }
 
 
@@ -21,20 +23,24 @@ public void findfirst() {
 	head = current;	
 }
 
+
 public boolean empty() {
 	 return head == null;	
 }
-	
+
+
 public boolean last() {
 	return current.next==null;
 }
 
-public void findnext(){
+
+public void findnext() {
 	current = current.next;
 }
-	
 
-public void insertSortred(T val) {
+
+
+public boolean insertSortred(T val) {
 	Node <T> tmp;
 	Node <T> prevoius = null ;
 	if(empty()) { 
@@ -48,18 +54,23 @@ public void insertSortred(T val) {
 		}
 		else {   // insertion at middle
 			current = head;
-			while(current!=null && current.getData().compareTo(val)<=0) {
+			while((current!=null) &&(current.getData().compareTo(val)<=0)) {
 				prevoius = current;
-				current = current.getNext();
+				current = current.next;
 			}
 			tmp = new Node(val);
+			if(current!=null);{
 			prevoius.next= tmp;
 			tmp.setNext(current);
-			current = tmp;		
-		}
-		 // insertion at the end when current = null;
+			current = tmp;
+			}
+			 // insertion at the end when current = null;
 			prevoius.next= tmp;
+	
+		}
 	}
+	length++;
+	return true;
 }
  
 
@@ -70,7 +81,7 @@ public boolean Search(T val) {
 	if(empty())
 		return false;
 	current=head;
-	Node <T> tmp;
+	Node <T> tmp ;
 	while (current!=null && current.getData().compareTo(val)!=0)
 		current=current.getNext();
 	if(current.getData().compareTo(val)==0) {
@@ -81,6 +92,9 @@ public boolean Search(T val) {
 return false;	
 }	
 	
+
+
+
 
 public void remove(T val) {
 	findfirst();
@@ -99,22 +113,8 @@ public void remove(T val) {
 		 current = head;
 	 else 
 		 current = current.next;
+	 length--;
 }
-
-
-
-
-
-
-
-
-
-	
-	
-	
-	
-	
-	
 	
 
 }
