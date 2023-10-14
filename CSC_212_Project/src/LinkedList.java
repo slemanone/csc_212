@@ -29,6 +29,10 @@ public boolean last() {
 	return current.next==null;
 }
 
+public void findnext(){
+	current = current.next;
+}
+	
 
 public void insertSortred(T val) {
 	Node <T> tmp;
@@ -71,7 +75,6 @@ public boolean Search(T val) {
 		current=current.getNext();
 	if(current.getData().compareTo(val)==0) {
 		tmp = current;
-		
 		return true;
 	}
 	current= head;
