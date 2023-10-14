@@ -1,14 +1,20 @@
 import java.util.Date;
 
 public class Contact implements Comparable<Contact>{
-private String name;
-private String notes;
-private String address;
-private int phone_number;
-private String email_address;
+	
+public String name;
+	
+public String notes;
+	
+public String address;
+	
+public int phone_number;
+	
+public String email_address;
+	
 Date birthday;
+	
 LinkedList <Event> event;
- 
 
 public Contact() {
 	this.address="";
