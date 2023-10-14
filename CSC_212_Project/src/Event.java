@@ -67,7 +67,12 @@ public void setDate(Date date) {
 
 
 
-//hello
+
+
+
+public void cls() {
+	
+}
 
 
 
