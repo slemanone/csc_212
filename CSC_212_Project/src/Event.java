@@ -1,51 +1,84 @@
-
+import java.util.Date;
 public class Event implements Comparable<Event>{
-	private String contactName;
-	private String eventTitle;
-	private String date_time;
-	private String location;
 
 
-	@Override
-	public int compareTo(Event o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+private String eventTitle;
+private String time;
+private String location;
+Date date;
 
+LinkedList <Contact> Contactsnames;
+
+
+
+// dafault constructer 
+public Event( String eventTitle, String time, String location, Date date, LinkedList<Contact> c) {
 	
-	public String getContactName() {
-		return contactName;
-	}
-
-	public void setContactName(String contactName) {
-		this.contactName = contactName;
-	}
-
-	public String getEventTitle() {
-		return eventTitle;
-	}
-
-	public void setEventTitle(String eventTitle) {
-		this.eventTitle = eventTitle;
-	}
-
-	public String getDate_time() {
-		return date_time;
-	}
-
-	public void setDate_time(String date_time) {
-		this.date_time = date_time;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-
 	
+	this.eventTitle = eventTitle;
+	this.time = time;
+	this.location = location;
+	this.date = date;
+	this.Contactsnames = c;
+}
+
+
+
+public String getEventTitle() {
+	
+	return eventTitle;
+}
+
+
+public void setEventTitle(String eventTitle) {
+	
+	this.eventTitle = eventTitle;
+}
+
+public String getTime() {
+	
+	return time;
+}
+
+public void setTime(String time) {
+	
+	this.time = time;
+}
+
+public String getLocation() {
+	
+	return location;
+}
+
+public void setLocation(String location) {
+	
+	this.location = location;
+}
+
+public Date getDate() {
+
+	return date;
+}
+
+public void setDate(Date date) {
+	this.date = date;
+ }
+
+
+
+
+
+
+
+
+
+
+public int compareTo(Event o) {
+	
+	return 0;
+}
+
+
+
 
 }
