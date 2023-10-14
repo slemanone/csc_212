@@ -1,17 +1,24 @@
 import java.util.Date;
+
 public class Event implements Comparable<Event>{
 
 
-private String eventTitle;
-private String time;
-private String location;
+public String eventTitle;
+public String time;
+public String location;
 Date date;
 
-LinkedList <Contact> Contactsnames;
+LinkedList <Contact> Contactnames;
 
 
+public Event() {
+	this.eventTitle ="";
+	this.time = "";
+	this.location = "";
+	this.date = null;
+	
+}
 
-// dafault constructer 
 public Event( String eventTitle, String time, String location, Date date, LinkedList<Contact> c) {
 	
 	
@@ -19,60 +26,9 @@ public Event( String eventTitle, String time, String location, Date date, Linked
 	this.time = time;
 	this.location = location;
 	this.date = date;
-	this.Contactsnames = c;
+	this.Contactnames = c;
 }
 
-
-
-public String getEventTitle() {
-	
-	return eventTitle;
-}
-
-
-public void setEventTitle(String eventTitle) {
-	
-	this.eventTitle = eventTitle;
-}
-
-public String getTime() {
-	
-	return time;
-}
-
-public void setTime(String time) {
-	
-	this.time = time;
-}
-
-public String getLocation() {
-	
-	return location;
-}
-
-public void setLocation(String location) {
-	
-	this.location = location;
-}
-
-public Date getDate() {
-
-	return date;
-}
-
-public void setDate(Date date) {
-	this.date = date;
- }
-
-
-
-
-
-
-
-public void cls() {
-	
-}
 
 
 
@@ -80,10 +36,10 @@ public void cls() {
 
 public int compareTo(Event o) {
 	
-	return 0;
+	return this.eventTitle.compareTo(o.eventTitle);
 }
+	
 
-
-
+	
 
 }
