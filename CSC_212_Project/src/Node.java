@@ -1,8 +1,8 @@
 
 public class Node<T>{
+private T data ;
+private Node<T> next;
 
-public T data;
-public Node<T> next;
 //default Constructor
 public Node() {
 	data=null;
